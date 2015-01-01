@@ -2,6 +2,14 @@
 Changelog
 ===========
 
+0.1.2
+------
+* BLD: MANIFEST.in
+
+0.1.1
+------
+* DOC: LICENSE
+
 0.1.0
 -------
 * First release as ``sphinxcontrib.srclinks``
