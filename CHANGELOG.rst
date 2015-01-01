@@ -2,6 +2,14 @@
 Changelog
 ===========
 
+0.2.1
+------
+* DOC: CHANGELOG.rst
+
+0.2.0
+------
+* BUG:  BUG: backwards compatibility with edit_on_github
+
 0.1.2
 ------
 * BLD: MANIFEST.in
