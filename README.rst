@@ -16,7 +16,7 @@ folder:
 
     DOCS="path/to/docs"
     mkdir -p $DOCS/_templates
-    cp sphinxcontrib-srclinks/sphinxcontrib/srclinks/srclinks.html \
+    cp sphinxcontrib-srclinks/sphinxcontrib/srclinks/_templates/srclinks.html \
         $DOCS/_templates/srclinks.html
 
 Configure the ``srclink_`` settings for the desired repo in ``conf.py``:
@@ -40,14 +40,14 @@ Add ``srclinks.html`` to ``html_sidebars`` in ``conf.py``:
         '**': [
             'localtoc.html',
             'relations.html',
-            'srclinks.html',
             'searchbox.html',
+            'srclinks.html',
             ],
         'index': [
             'globaltoc.html',
             'relations.html',
-            'srclinks.html',
             'searchbox.html',
+            'srclinks.html',
             ],
     }
     
