@@ -84,7 +84,19 @@ class Context(object):
 
     def get_project_vars_from_urlstr(self, urlstr):
         _url = urlparse.urlparse(urlstr)
-        project_path = '/'.join(_url.path.split('/')[1:3])  # user/project
+        _path = _url.path
+        if _path.startswith('git@') or _path.startswith('hg@'):
+            _path = _url.path.lstrip("git@").lstrip("hg@")
+        pathcomp = _path.split('/')
+        if not _url.netloc:
+            if len(pathcomp) == 2:
+                project_path = '/'.join(pathcomp)
+            elif len(pathcomp) == 3:
+                project_path = '/'.join(pathcomp[-2:])
+            else:
+                raise Exception("Unable to parse %r (%r)" % (urlstr, _path))
+        else:
+            project_path = '/'.join([p for p in _path.split('/') if p][:2])  # user/project
         if self.type_:
             project_url = 'https://{type_}/{project_path}'.format(
                 type_=self.type_,
@@ -97,11 +109,13 @@ class Context(object):
     def get_srclink_context(urlstr):
         if '/' in urlstr or '@' in urlstr:
             klass = Context.get_context_class_for_url(urlstr)
+            if klass is None:
+                if '/' in urlstr:
+                    klass = GitHubContext
         else:
             klass = GitHubContext
         if klass is None:
-            print(urlstr)
-            raise Exception(Context)
+            raise Exception("No Context could be found for %r" % urlstr)
         return klass
 
     lookup = get_srclink_context
@@ -413,6 +427,26 @@ class TestRepositorycontexts(unittest.TestCase):
                 context['srclink_src_native_url'],
                 project_native_url)
             return context
+
+        test_html_page_context(
+            "github.com/westurner/dotfiles",
+            "develop",
+            "doc/",
+            "westurner/dotfiles",
+            project_url="https://github.com/westurner/dotfiles",
+            project_https_url="https://github.com/westurner/dotfiles",
+            project_ssh_url="ssh://git@github.com/westurner/dotfiles",
+            project_native_url="git://github.com/westurner/dotfiles")
+
+        test_html_page_context(
+            "westurner/dotfiles",
+            "develop",
+            "doc/",
+            "westurner/dotfiles",
+            project_url="https://github.com/westurner/dotfiles",
+            project_https_url="https://github.com/westurner/dotfiles",
+            project_ssh_url="ssh://git@github.com/westurner/dotfiles",
+            project_native_url="git://github.com/westurner/dotfiles")
 
         test_html_page_context(
             "https://github.com/westurner/dotfiles",
