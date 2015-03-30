@@ -37,17 +37,13 @@
       {%- endif %}
   </h5>
   {%- endif %}
-
   <ul>
-
   {%- if srclink_src_https_url %}
     <li><pre>{{ srclink_src_clone_cmd }} {{ srclink_src_https_url }}</pre></li>
   {%- endif %}
-
   {%- if srclink_src_ssh_url %}
     <li><pre>{{ srclink_src_clone_cmd }} {{ srclink_src_ssh_url }}</pre></li>
   {%- endif %}
-
   {%- if srclink_src_native_url %}
     <li><pre>{{ srclink_src_clone_cmd }} {{ srclink_src_native_url }}</pre></li>
   {%- endif %}
