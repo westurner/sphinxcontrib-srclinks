@@ -16,7 +16,10 @@ import logging
 import os
 import re
 import sys
-import urlparse
+try:
+    import urlparse
+except:
+    import urllib.parse as urlparse
 import warnings
 
 
