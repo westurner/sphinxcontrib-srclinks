@@ -4,6 +4,7 @@ sphinxcontrib-srclinks
 ========================
 * Source: https://github.com/westurner/sphinxcontrib-srclinks
 * Source: https://github.com/westurner/sphinxcontrib-srclinks/blob/master/sphinxcontrib/srclinks/__init__.py
+* Source: https://github.com/westurner/sphinxcontrib-srclinks/blob/master/sphinxcontrib/srclinks/_templates/srclinks.html
 
 Sphinxcontrib-srclinks is a Sphinx extension for
 adding project links to the sidebar.
