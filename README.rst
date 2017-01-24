@@ -8,12 +8,16 @@ sphinxcontrib-srclinks
 
 A sphinx extension to add links to various views of the documentation page source in the sphinx jinja2 template sidebar.
 
-Features
------------
+Contents
+------------
+.. contents::
 
-* Specify ``srclink_project`` in sphinx conf.py
-* Add links to {Source, Edit, History, Annotate} and {GitHub, BitBucket,} URLs to the Sphinx HTML template sidebar.
-* Add links to {https://./user/repo/, and e.g. https://./tree/[srclink_branchname]}
+Features
+-------------
+* Specify ``srclink_project`` once in sphinx ``conf.py``
+* Adds links to {Source, Edit, History, Annotate} with {GitHub, BitBucket,} URLs to the sidebar.
+* Adds links to e.g. https://github.com/user/repo/ and https://github.com/user/repo/tree/[``srclink_branchname``]
+* Adds a ``<code>  git clone schema://git@github.com/repo  </code>`` block for each https, native git/hg, and ssh URL 
 
 * (Sphinx HTML Documentation Sidebar)
 
@@ -30,12 +34,12 @@ Features
     
       * git clone https://github.com/westurner/sphinxcontrib-srclinks
       * git clone git@github.com/westurner/sphinxcontrib-srclinks
-      * git clone ssh://git@github.com/westurner/sphinxcontrib-srclinks
+      * git clone `<ssh://git@github.com/westurner/sphinxcontrib-srclinks>`_
 
 Usage
 -------
 
-- Clone the sphinxcontrib-srclinks repo
+- Clone the sphinxcontrib-srclinks repo:
 
 .. code:: bash
 
@@ -50,17 +54,20 @@ Usage
     cp sphinxcontrib-srclinks/sphinxcontrib/srclinks/_templates/srclinks.html \
         "$DOCS/_templates/srclinks.html"
 
-- BLD: conf.py: Configure the ``srclink_`` settings in conf.py (``test_html_page_context()``)
+- BLD: conf.py: Configure the ``srclink_`` settings in ``conf.py`` (``test_html_page_context()``):
 
 .. code:: python
 
     # conf.py
+    # srclink settings
     srclink_project = 'https://github.com/westurner/sphinxcontrib-srclinks'
-    srclink_project = 'https://bitbucket.org/westurner/sphinxcontrib-srclinks'
-    srclink_project = 'hg@bitbucket.org/westurner/sphinxcontrib-srclinks'
-    srclink_project = 'git@bitbucket.org/westurner/sphinxcontrib-srclinks'
+    #srclink_project = 'https://bitbucket.org/westurner/sphinxcontrib-srclinks'
+    #srclink_project = 'hg@bitbucket.org/westurner/sphinxcontrib-srclinks'
+    #srclink_project = 'git@bitbucket.org/westurner/sphinxcontrib-srclinks'
     srclink_src_path = 'docs/'
+    #srclink_src_path = ''
     srclink_branch = 'master'
+    #srclink_branch = 'develop'
 
     
 - BLD: conf.py: Add ``srclinks.html`` to ``html_sidebars`` in ``conf.py``:
@@ -82,6 +89,12 @@ Usage
             'srclinks.html',
             ],
     }
+    
+conf.py examples
+~~~~~~~~~~~~~~~~~~
+* https://wrdrd.github.io/ ( https://wrdrd.com/ )
+
+  * conf.py: https://github.com/wrdrd/docs/blob/master/docs/conf.py
     
 
 License
