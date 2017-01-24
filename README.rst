@@ -2,12 +2,16 @@
 
 sphinxcontrib-srclinks
 ========================
+* Source: https://github.com/westurner/sphinxcontrib-srclinks
+* Source: https://github.com/westurner/sphinxcontrib-srclinks/blob/master/sphinxcontrib/srclinks/__init__.py
+
 Sphinxcontrib-srclinks is a Sphinx extension for
 adding project links to the sidebar.
 
+
 Usage
 -------
-Clone the repo and copy srclinks.html into the docs' ``_templates/``
+Clone the repo and copy ``srclinks.html`` into the docs' ``_templates/``
 folder:
 
 .. code:: bash
@@ -23,7 +27,7 @@ Configure the ``srclink_`` settings for the desired repo in ``conf.py``:
 
 .. code:: python
 
-    # conf.py
+    # conf.py| Source: | Source: 
     srclink_project = 'https://github.com/westurner/sphinxcontrib-srclinks'
     srclink_project = 'https://bitbucket.org/westurner/sphinxcontrib-srclinks'
     srclink_project = 'hg@bitbucket.org/westurner/sphinxcontrib-srclinks'
