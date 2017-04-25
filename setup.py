@@ -22,7 +22,7 @@ requires = ['Sphinx>=0.6']
 setup(
     name='sphinxcontrib-srclinks',
     version='0.2.1',
-    url='http://bitbucket.org/westurner/sphinxcontrib-srclinks',
+    url='https://github.com/westurner/sphinxcontrib-srclinks',
     download_url='http://pypi.python.org/pypi/sphinxcontrib-srclinks',
     license='BSD (3-clause)',
     author='Wes Turner',
