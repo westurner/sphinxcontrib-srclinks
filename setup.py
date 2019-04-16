@@ -21,7 +21,7 @@ requires = ['Sphinx>=0.6']
 
 setup(
     name='sphinxcontrib-srclinks',
-    version='0.2.3',
+    version='0.2.4',
     url='http://bitbucket.org/westurner/sphinxcontrib-srclinks',
     download_url='http://pypi.python.org/pypi/sphinxcontrib-srclinks',
     license='BSD (3-clause)',
@@ -37,6 +37,8 @@ setup(
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 3',
         'Topic :: Documentation',
         'Topic :: Utilities',
     ],
