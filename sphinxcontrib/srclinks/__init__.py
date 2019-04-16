@@ -16,11 +16,12 @@ import logging
 import os
 import re
 import sys
-try:
-    import urlparse
-except:
-    import urllib.parse as urlparse
 import warnings
+
+if sys.version_info.major < 3:
+    import urlparse
+else:
+    import urllib.parse as urlparse
 
 
 __licence__ = 'BSD (3 clause)'
