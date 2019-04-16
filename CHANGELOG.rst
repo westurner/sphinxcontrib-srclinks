@@ -2,6 +2,10 @@
 Changelog
 ===========
 
+0.2.4 (2019-04-16)
+-------------------
+* DOC: Add Python 2 and 3 trove classifiers
+
 0.2.3 (2019-04-16)
 -------------------
 * BUG: Python 3 Compatibility
