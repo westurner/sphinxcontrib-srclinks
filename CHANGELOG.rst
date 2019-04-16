@@ -2,6 +2,10 @@
 Changelog
 ===========
 
+0.2.3 (2019-04-16)
+-------------------
+* BUG: Python 3 Compatibility
+
 0.2.2
 ------
 * ENH: _templates/srclinks.html: add class='widget navlinks|srclinks
